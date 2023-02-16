@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Задача 1</h1>
+	<p>З клавіатури вводиться ціна товару і кількість грошей. 
+		Якщо грошей не вистачає то відмовляємо у покупці, інакше, якщо ще залишаються гроші, то пропонуємо купити лотерею за 4 грн.
+	</p>
+<script>
+
+	// Позначення величин, та введення їх данних 
+const itemValue = parseFloat(prompt('Введіть ціну товару',''))
+const moneyQuantity = parseInt(prompt('Введіть кількість грошей',''))
+
+//Рішення 
+if(moneyQuantity >= itemValue)
+	document.write(`Товар продан. В вас залишилась решта, не хочете купити лотарею за 4 грн?`)
+else if (moneyQuantity < itemValue)
+	document.write(`Не достатньо коштів`)
+</script>
+
+</body>
+</html>
