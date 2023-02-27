@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Задача 15</h1>
+    <p>
+   	Користувача поступово вводить показники температури протягом року. Знайти середню температуру.
+    </p>
+    <script>
+   
+	let monthlyTemp = 1
+	let monthAtYear = 12
+   let totalMonthTemp = 0
+	let avarageOfYearTemp = 0
+
+
+	for (let monthlyTemp = 1; monthlyTemp <= monthAtYear; monthlyTemp++) {
+	let userTemp = parseFloat(prompt(`Введіть середню погоду за ${monthlyTemp} місяць`))
+	totalMonthTemp += userTemp
+	}
+	avarageOfYearTemp = totalMonthTemp / monthAtYear
+
+	document.write(`Середня місячна температура за рік дорівнює ${avarageOfYearTemp}`)
+
+	
+
+
+
+// const numberMonthYear = 12
+//     let averageTemperatureYear = 0,
+//       totalTemperatureYear = 0
+//     //2. Знаходимо результат.
+//     for (let i = 1; i <= numberMonthYear; i++) {
+//       const oneMonthTemperature = parseFloat(prompt(`Введіть середню температуру ${i} місяця`,''))
+//       totalTemperatureYear += oneMonthTemperature
+//     }
+//     averageTemperatureYear = totalTemperatureYear / numberMonthYear
+//     //3. Виведення результатів.
+//     document.write(`
+//       <table border="3px">
+//       <tr>
+//         <th>Середня температура протягом року :</th>
+//         <td>${averageTemperatureYear}</td>
+//       </tr>
+//     </table>
+//     `)
+//   </script>
+    </script>
+  </body>
+</html>

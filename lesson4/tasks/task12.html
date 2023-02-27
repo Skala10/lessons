@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Задача 13</h1>
+    <p>
+      Морський бій. Комп’ютер випадково розташовує одиночний корабель на полі
+      розміром N*M. Маючи К снарядів користувач намагається потопити корабель.
+    </p>
+    <script>
+      let N = parseInt(prompt("Кількість клітин на Y осі"))
+      let M = parseInt(prompt("Кількість клітин на X осі"))
+      let shipY = Math.round(Math.random() * N) + 1
+      let shipX = Math.round(Math.random() * M) + 1
+      const K = parseInt(prompt("Кількість снарядів"))
+      const shipOnBoard = shipY + shipX
+      let result
+
+      for (let bulletsQuantity = 1; bulletsQuantity <= K; bulletsQuantity++) {
+        let attempY = parseInt(
+          prompt("Введіть номер квадрата по осі Y куди ви стріляєете")
+        )
+        let attempX = parseInt(
+          prompt("Введіть номер квадрата по осі X куди ви стріляєете")
+        )
+        let totalShot = attempY + attempX
+
+        if (totalShot === shipOnBoard) {
+          result = "ти переміг"
+        } else if (bulletsQuantity === K) result = "ти програв"
+      }
+      document.write(`${result}`)
+    </script>
+  </body>
+</html>

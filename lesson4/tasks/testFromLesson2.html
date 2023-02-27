@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Задача 11. Знайти суму 5 непарних чисел, що знаходяться між заданими користувачем числами.
+      //   const userNumberOne = parseInt(prompt('Введіть число 1'))
+      //   const userNumberSecond = parseInt(prompt('Введіть число 2'))
+
+      //   let minNumber, maxNumber
+      //   if (userNumberOne < userNumberSecond) {
+      //     minNumber = userNumberOne
+      //     maxNumber = userNumberSecond
+      //   } else {
+      //     minNumber = userNumberSecond
+      //     maxNumber = userNumberOne
+      //   }
+      //-------------------------------
+      //   let minNumber = parseInt(prompt('Введіть число 1'))
+      //   let maxNumber = parseInt(prompt('Введіть число 2'))
+      //   //--- 1. Валідація даних
+      //   if (minNumber > maxNumber) {
+      //     const temp = minNumber
+      //     minNumber = maxNumber
+      //     maxNumber = temp
+      //   }
+
+      //---- 2. Знаходження розв"язків
+      //   let currentNum = minNumber+1,
+      //     counter = 0,
+      //     totalSummNumber = 0
+
+      //   // Використовуємо цикл
+      //   while (currentNum < maxNumber && counter < 5) {
+      //     if (currentNum % 2 !== 0) {
+      //       totalSummNumber += currentNum
+      //       counter++
+      //     }
+      //     currentNum++  2 3 - 75< 77
+      //   }
+
+      //   let oddNumbersCounter = 0,
+      //     totalSummNumber = 0
+
+      //   for ( let currentNum = minNumber;   currentNum <= maxNumber && oddNumbersCounter < 5;   currentNum++ ) {
+      //     if (currentNum % 2 !== 0) {
+      //       totalSummNumber += currentNum
+      //       oddNumbersCounter++
+      //     }
+      //   }
+      //=====================================================
+
+      //Задача 1.Поступов генеруються N чисел. Знайти максимальне, мінімальне та середнє значення
+      //0.Позначення
+      // N - кількість чисел
+      //max- максимальне
+      //min -мінімальне
+      //average - середнє
+      //sum - сума
+      //1.Введення змінних, які потрібні
+      //   const N = parseInt(prompt('N ='))
+      //   let sum = 0
+      //   let min = +Infinity
+      //   let max = -Infinity
+      //   for (let i = 0; i < N; i++) {
+      //     const num = parseFloat(prompt('Number ='))
+      //     if (num < min) min = num
+      //     if (num > max) max = num
+      //     sum += num
+      //   }
+      //   const average = sum / N
+      //   document.write(`min = ${min} max = ${max}  average  = ${average}`)
+
+      // Задача 3. Вивести високосні роки у вказаному діапазоні (між початковим і кінцевим  роками).
+      //високосний  - він кратний 4, але не кратний 100, а також якщо він кратний 400.
+      //0
+      // startYear - початковий рік
+      // endYear - кінцевий рік
+      //1
+      //   const startYear = parseInt(prompt('Початковий рік ='))
+      //   const endYear = parseInt(prompt('Кінцевий рік'))
+
+      //   for (let year = startYear; year <= endYear; year++) {
+      //     if (year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0))
+      //       document.write(`Leap year : ${year}  <br>`)
+      //   }
+
+      //Задача 4. Вивести усі трицифрові числа, де друга цифра завжди є меншою або рівню за першу, а третя є меншою або рівною за другу.    100 - 999    (531 ->   c1=5 c2=3 c3=1)   c1:1-9, c2:0-c1, c3:0-c2
+      //   for (let c1 = 1; c1 <= 9; c1++) {
+      //     for (let c2 = 0; c2 <= c1; c2++) {
+      //       for (let c3 = 0; c3 <= c2; c3++) {
+      //         document.write(`${c1}${c2}${c3}   <br>`)
+      //       }
+      //     }
+      //   }
+      // Задача 2.  Тільки позитивні емоції. З клавіатури вводиться М - максимальна кількість смайликів, які можна
+      // вивести. Комп’ютер випадково вибирає якесь із 4 наперед заданих. Серед них є сумний смайл.
+      //   1)Якщо знаходимо сумний смайл – зупитини
+      //   2)Якщо знаходимо сумний смайл – пропустити
+      //   3)Якщо знаходимо сумний смайл – вибрати наступний позитивний
+
+      //   const M = parseInt(prompt('Введіть максимальну кількість зображень'))
+      //   const sadSmileNumber = 4
+
+      //1)Якщо знаходимо сумний смайл – зупитини
+      //   for (let i = 0; i < M; i++) {
+      //     const randSmileNum = 1 + Math.floor(Math.random() * 4)
+      //     if (randSmileNum === sadSmileNumber) break
+
+      //     document.write(`<img src="./img/img${randSmileNum}.jpg">`)
+      //   }
+
+      //   2)Якщо знаходимо сумний смайл – пропустити
+      //   for (let i = 0; i < M; i++) {
+      //     const randSmileNum = 1 + Math.floor(Math.random() * 4)
+      //     if (randSmileNum === sadSmileNumber) continue
+
+      //     document.write(`<img src="./img/img${randSmileNum}.jpg">`)
+      //   }
+
+      //   3)Якщо знаходимо сумний смайл – вибрати наступний позитивний
+      //   for (let i = 0; i < M; i++) {
+      //     const randSmileNum = 1 + Math.floor(Math.random() * 4)
+      //     if (randSmileNum === sadSmileNumber)
+      //       // (currentValue - num + N)%(max - min+1) +min
+      //       //  randSmileNum = (randSmileNum-1+1)%(4-1+1) + 1
+      //       randSmileNum = (randSmileNum % 4) + 1
+
+      //     document.write(`<img src="./img/img${randSmileNum}.jpg">`)
+      //   }
+
+      // Продаж булочок. Є у продавця N (>0) булочок. Поки є булочки продавати їх.
+      // (питати у користувача кількість, якщо є така, то продавати)
+      //   let N = parseInt(prompt('Введіть початкову кількість булочок N'))
+      //   do {
+      //     const userRollNumber = parseInt(
+      //       prompt(`Є у наявності ${N} булок. Скільки вам?`)
+      //     )
+      //     if (userRollNumber <= N) {
+      //       alert(`Продано ${userRollNumber} булочок`)
+      //       N -= userRollNumber
+      //     } else alert(`У нас є тільки ${N} булочок `)
+      //   } while (N > 0)
+
+      //   alert('Всі булочки продані')
+
+      // Задача 2. Комп’ютер випадковим чином вибирає початок і кінець проміжку (проміжок повинен знаходитися в межах від 1 до 100). Користувач вводить число і виграє, якщо число знаходиться у цьому проміжку, або розташоване від нього (від лівого або правого краю) не більше ніж на 10. ((min-10)   ---  (max+10))
+      //   let min = 1 + Math.floor(Math.random() * 100) //50
+      //   let max = 1 + Math.floor(Math.random() * 100) //12
+
+      //   if (min > max) {
+      //     const temp = min
+      //     min = max
+      //     max = temp
+      //   }
+
+      //   let userNumber
+
+      //   do {
+      //     userNumber = parseInt(prompt('Number (1-100)'))
+      //   } while (userNumber < 1 || userNumber > 100)
+
+      //   let result
+      //   if (min - 10 <= userNumber && userNumber <= max + 10) result = 'Win'
+      //   else result = 'Looose!'
+
+      //   alert(result)
+
+      //З клавіатури вводиться кількість рядків і стовпців. Вивести таблицю заповнену
+      //рандомними числами від 1 до 100
+      //   const rowsNumber = parseInt(prompt('Rows number ='))
+      //   const columnsNumber = parseInt(prompt('Columns number ='))
+      //   let randNum
+
+      //   document.write(`
+      //   <table border="2=x">
+      //        <tbody>
+      //   `)
+      //   for (let r = 0; r < rowsNumber; r++) {
+      //     document.write('<tr>')
+      //     for (let c = 0; c < columnsNumber; c++) {
+      //       randNum = 1 + Math.floor(Math.random() * 100)
+      //       document.write(`<td>${randNum}</td>`)
+      //     }
+      //     document.write('</tr>')
+      //   }
+
+      //   document.write(`
+      //         </tbody>
+      //    </table>
+      //   `)
+      //ЗНайти два найбільших серед 4-х
+      let n1 = parseInt(prompt('n1 ='))
+      let n2 = parseInt(prompt('n2 ='))
+      let n3 = parseInt(prompt('n3 ='))
+      let n4 = parseInt(prompt('n4 ='))
+      let max1, max2 //max1 >= max2
+
+      if (n1 > n2) {
+        max1 = n1
+        max2 = n2
+      } else {
+        max1 = n2
+        max2 = n1
+      }
+
+      if (n3 > max1) {
+        max2 = max1
+        max1 = n3
+      } else if (n3 > max2) max2 = n3
+
+      if (n4 > max1) {
+        max2 = max1
+        max1 = n4
+      } else if (n4 > max2) max2 = n4
+
+      document.write(`max= ${max1}  max2 =${max2}`)
+
+      //==================================
+      //Сгенерируйте серию случайных чисел из 0, 1, 2 так, чтобы количество двоек было равно количеству нулей."
+      // k0 - 4 , k2 - 2   |k2 - k0|>0     (N-|k2 - k0|)
+      // 10 : 1 0 1 2 0 1 2 0 0 2 2
+    </script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+    <h1>Задача 7</h1>
+    <p>Вивести на екран N абзаців (N вводиться користувачем) за зразком:</p>
+    <script>
+
+		let N = parseInt(prompt('Введіть цифрою від 1 до 4 кількість абзаців яку ви хочете вивести'))
+		let result
+
+		switch(N){
+			case 1: result =  `<h1>Заголовок 1</h1>
+									<p>Заголовок 1, Розділ 1</p>`
+				break; 
+			case 2: result =  `<h1>Заголовок 2</h1>
+									<p>Заголовок 1, Розділ 1</p>`
+				break;
+			case 3: result =  `<h1>Заголовок 3</h1>
+									<p>Заголовок 1, Розділ 1</p>`
+				break;
+			case 4: result =  `<h1>Заголовок 4</h1>
+									<p>Заголовок 1, Розділ 1</p>`
+				break;
+				default: result = "Введіть правильну цифру"
+					break; 
+		}
+
+		document.write(`${result}`)
+
+    </script>
+</script>
+
+
+</body>
+</html>

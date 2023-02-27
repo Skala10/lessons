@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Задача 10</h1>
+    <p>
+      Знайти суму 5 непарних чисел, що знаходяться між заданими користувачем
+      числами.
+    </p>
+
+    <script>
+      const rangeStart = parseInt(
+        prompt(" Введіть номер з якого починати розрахунок")
+      )
+      const rangeEnd = parseInt(
+        prompt(" Введіть номер до якого продовжувати розрахунок")
+      )
+
+      let listOddNumbers = ""
+      let randomNum =
+        Math.floor(Math.random() * (rangeEnd - rangeStart + 1)) + rangeStart
+      let sum = 0
+      let i = 1
+      let oddCounter = 0
+
+      while (oddCounter < 5) {
+        if (rangeEnd - rangeStart > 11) {
+          if (randomNum % 2 != 0) {
+            listOddNumbers += `${randomNum}, `
+            sum += randomNum
+            oddCounter++
+          }
+        } else {
+          if (rangeStart + i < rangeEnd) {
+            if ((rangeStart + i) % 2 !== 0) {
+              listOddNumbers += `${rangeStart + i}, `
+              sum += rangeStart + i
+              oddCounter++
+            }
+            i++
+          } else break
+        }
+      }
+      document.write(
+        ` Сума дорівнює ${sum}. <br> Список непарних чисел ${listOddNumbers}`
+      )
+    </script>
+  </body>
+</html>

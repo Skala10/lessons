@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Задача 1.</h1>
+    <p>
+      Вивести з використанням циклів маркований список з випадковими числами
+      (1-100). Кількість випадкових чисел вводиться користувачем. Приклад:
+    </p>
+    <script>
+      // let userNumber = parseInt(prompt('Скільки випадкових чисел ви хочете отримати? '))
+      // let minNumber = 0
+      // let randomCompNumber
+      // while (minNumber < userNumber){
+      // 	randomCompNumber = 0 + Math.Floor(Math.random()* (userNumber + 1 - 1))
+      // 	minNumber++
+      // }
+      // document.write(`Випадкове число ${randomCompNumber}`)
+
+      let userNumber = parseInt(
+        prompt("Скільки випадкових чисел ви хочете отримати? ")
+      )
+      let minAttempNumber = 0
+      let minNumber = 1,
+        maxNumber = 100
+      do {
+        const randomCompNumber =
+          minNumber +
+          Math.floor(Math.random() * (maxNumber + minNumber - minNumber))
+        minAttempNumber++
+        document.write(` 	 <ul>
+		<ol>
+ 				${randomCompNumber}
+		</ol>
+	 </ul> 
+	 `)
+      } while (minAttempNumber < userNumber)
+    </script>
+  </body>
+</html>
