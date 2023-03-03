@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Задача 5</h1>
+    <p>
+      Створити окремі функції, які переводять: Сантиметри у дюйми; Кілограми у
+      фунти; Кілометри у милі.
+    </p>
+    <script>
+      function getCmInInch(a) {
+        const inch = 2.54
+        let centimetersInInch = inch * a
+        return centimetersInInch
+      }
+      function getKgInLbs(a) {
+        const Lbs = 2.205
+        let kilogramsInLbs = Lbs * a
+        return kilogramsInLbs
+      }
+
+      function getKmInMl(a) {
+        const mile = 1.6093
+        let kilometrsInMile = mile * a
+        return kilometrsInMile
+      }
+
+      const centimetersInInch = parseInt(prompt("Кількість Інчів"))
+      const kilogramsInLbs = parseInt(prompt("Кількість Фунтів"))
+      const kilometrsInMile = parseInt(prompt("Кількість Миль"))
+      document.write(
+        ` в ${centimetersInInch} інчах : ${getCmInInch(
+          centimetersInInch 
+        )} сантіметра, в ${kilogramsInLbs} фунтах ${getKgInLbs(
+          kilogramsInLbs.toPrecision(2)
+        )} кілограм, в ${kilometrsInMile} милях  ${getKmInMl(
+          kilometrsInMile.toPrecision(1)
+        )} кілометрів`
+      )
+    </script>
+  </body>
+</html>

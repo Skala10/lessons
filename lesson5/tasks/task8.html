@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Задача 9</h1>
+    <p>
+      Дано покази температур (довільна кількість). Розробити функцію, яка
+      дозволить підрахувати кількість від’ємних показів температури.
+    </p>
+    <script>
+
+ function getMinusTemp() {
+	let minusTemp = 0
+	for (let i = 0; i < arguments.length; i++) {
+		if (arguments[i] < 0) minusTemp += 1
+	}
+	return minusTemp
+ }
+
+ const temp1 = getMinusTemp(3, -2, 5, 5, 8, -3, -6)
+ const temp2 = getMinusTemp(-9, -1, -8, 0, 2, -1, 1, 5)
+
+ document.write(`Перший перелік: ${temp1}, другий перелік: ${temp2}`)
+
+     </script>
+  </body>
+</html>

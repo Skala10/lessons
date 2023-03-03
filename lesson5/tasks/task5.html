@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Задача 6</h1>
+    <p>
+      Створити функцію, яка створює таблицю з вказаною кількістю рядків і
+      стовпців (таблиця заповнюється заданим фіксованим повідомленням).
+    </p>
+    <script>
+      function getTable(a, b, text = '') {
+        document.write("<div style='display: flex; column-gap: 40px;'>")
+        document.write('<table border="2px">')
+        for (let i = 0; i < a; i++) {
+          document.write("<tr>")
+          for (let j = 0; j <= b; j++) {
+            document.write(`<td> ${text} </td>`)
+          }
+        }
+        document.write("<tr>")
+        document.write("</table>")
+        document.write("</div>")
+      }
+
+      let a = parseInt(prompt("Кількість рядків"))
+      let b = parseInt(prompt("Кількість стовпців"))
+      let tableText = prompt("Напишіть текст який має бути в середені таблиці")
+
+     getTable(a, b, tableText)
+	  
+    </script>
+  </body>
+</html>
