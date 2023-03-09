@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Задача 9</h1>
+    <p>
+      Морський бій. Користувач вводить кількість клітинок одновимірного масиву
+      та кількість одиночних кораблів. Комп’ютер довільно розміщує ці одиночні
+      кораблі у масиві по один у клітинці (якщо у клітинці 0, то клітинка пуста,
+      якщо 1 – то це означає, що там є корабель. Користувач вводить номер
+      клітинки, куди стріляє. Гра продовжується до тих пір, поки не будуть
+      потоплені усі кораблі.
+    </p>
+    <script>
+            const columnsNum = parseInt(
+              prompt("Введіть кількість клітинок які будуть розташовані в ряд")
+            )
+            const shipsOnBoard = parseInt(
+              prompt(
+                "Введіть кількість одиночних кораблів які будуть розташовані в цьому рядку"
+              )
+            )
+
+            function inputArr(columnsNum) {
+              let arr = []
+              for (let i = 0; i < columnsNum; i++) {
+                arr.push(0)
+              }
+              return arr
+            }
+
+            function getRandomNum(columnsNum) {
+              return Math.round(Math.random() * columnsNum)
+            }
+
+            function inputShips(shipsOnBoard) {
+              let arrayOfShips = inputArr(columnsNum)
+              for (let i = 0; i < shipsOnBoard; i++) {
+                let randomNum = getRandomNum(columnsNum)
+                if (arrayOfShips[randomNum] !== 1) arrayOfShips[randomNum] = 1
+                else i--
+              }
+      		  return arrayOfShips
+            }
+
+      		function warShipsGame (arrayOfShips, shipsOnBoard) {
+      			let attemps = 0
+      			do{
+      				let shot = parseInt(
+              prompt(
+                `Введіть клітину від 1 до ${columnsNum} куди в стріляїте`
+              )
+            )
+            if (arrayOfShips[shot - 1] === 1) {
+               shipsOnBoard--
+               alert(`Ви потопили корабель! Залишилось ${shipsOnBoard}`)
+            }
+            attemps++
+         } while (shipsOnBoard > 0)
+         return alert(`Вітаю! Ви потопили всі кораблі за ${attemps} спроб `)
+      }
+
+      const arrayOfShips = inputShips(shipsOnBoard)
+      const warShips = warShipsGame(arrayOfShips, shipsOnBoard)
+    </script>
+  </body>
+</html>

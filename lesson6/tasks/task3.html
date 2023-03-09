@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Задача 4</h1>
+    <p>
+      Дано послідовність номерів автомобілів. Підрахувати кількість номерів, які
+      : • починаються на букву «А»; • перша і остання літери співпадають; •
+      складаються з більше ніш 5 символів;
+    </p>
+    <script>
+      const carsNumbers = [
+        "A5467FA",
+        "B4622KV",
+        "A9483KV",
+        "A34F",
+        "NM5432NV",
+        "A323Y",
+      ]
+
+      function getNumbersStartsA(numbers) {
+        let result = 0
+        for (let i = 0; i < numbers.length; i++) {
+          if (numbers[i][0] === "A") result++
+        }
+        return result
+      }
+
+      function getNumbersWithSameFirstAndLastLetter(numbers) {
+        let result = 0
+        for (let i = 0; i < numbers.length; i++) {
+          if (numbers[i][0] === numbers[i][numbers[i].length - 1]) 
+			 result++
+        }
+        return result
+      }
+
+      function getNumbersWithMoreThen5Letters(numbers) {
+        let result = 0
+        for (let i = 0; i < numbers.length; i++) {
+          if (numbers[i][5]) result++
+        }
+        return result
+      }
+
+      const numbersStartsA = getNumbersStartsA(carsNumbers)
+      const numbersWithSameFirstAndLastLetter =
+        getNumbersWithSameFirstAndLastLetter(carsNumbers)
+      const numbersWithMoreThen5Letters =
+        getNumbersWithMoreThen5Letters(carsNumbers)
+
+      document.write(
+        `Номера які починаються на букву «А»: ${numbersStartsA}, <br>
+		  Номери в яких перша і остання літери співпадають: ${numbersWithSameFirstAndLastLetter},<br>
+		  номери в яких  складаються з більше ніш 5 символів: ${numbersWithMoreThen5Letters}`
+      )
+    </script>
+	
+  </body>
+</html>

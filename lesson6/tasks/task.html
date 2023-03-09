@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Задача 0.</h1>
+    <p>
+      Дано масив, який містить оцінки з К предметів. Знайти середній бал і
+      з’ясувати до якої категорії він відноситься (відмінник, двійочник (має
+      хоча би одну двійку), хорошист (оцінки добре і відмінно), трійочник(є хоча
+      би одна трійка)).
+    </p>
+    <script>
+      const K = parseInt(prompt("Введіть кількість предметів"))
+
+      function getInputScores(itemsNum) {
+        let scoresArr = []
+        for (let i = 1; i <= itemsNum; i++) {
+          const score = parseInt(prompt(`Введіть оцінку з ${i}-го предмету`))
+          scoresArr.push(score)
+        }
+        return scoresArr
+      }
+
+      function getMinScore(totalScores) {
+        let minScore = totalScores[0]
+        for (let i = 1; i < totalScores.length; i++) {
+          if (totalScores[i] < minScore) minScore = totalScores[i]
+        }
+        return minScore
+      }
+
+      function getAverageScore(scoresArr) {
+        let averageScore = 0
+        for (let i = 0; i < scoresArr.length; i++) {
+          averageScore += scoresArr[i]
+        }
+        averageScore = averageScore / scoresArr.length
+        return averageScore
+      }
+
+      function getCategory(totalScores) {
+        let category
+        for (let i = 0; i < totalScores.length; i++) {
+          if (minScore === 4) category = "Хорошист"
+          else if (minScore === 3) category = "Трійочник"
+          else if (minScore === 2) category = "Двійочник"
+          else category = "Відмінник"
+        }
+        return category
+      }
+
+      const totalScores = getInputScores(K)
+		const minScore = getMinScore(totalScores)
+      const averageScore = getAverageScore(totalScores)
+      const category = getCategory(totalScores)
+
+
+      document.write(`Середня оцінка: ${averageScore.toFixed(2)} , категорія: ${category}`)
+    </script>
+  </body>
+</html>

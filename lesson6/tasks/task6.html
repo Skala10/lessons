@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Задача 7</h1>
+    <p>
+      Дано послідовність платіжок протягом року. Знайти сумарну кількість грошей
+      за: за весь рік; у першій половині року; у другій половині року; за літо;
+      за ІІ квартал; за парні місяці (з парними номерами); за місяці, які є
+      початковими у сезоні (весна, літо, осінь, зима).
+    </p>
+    <script>
+      function inputArray(itemsNumber) {
+        arr = []
+        for (let i = 1; i <= itemsNumber; i++) {
+          const monthPayment = parseInt(
+            prompt(`Введіть сумму платежу за ${i} місяць`)
+          )
+          arr.push(monthPayment)
+        }
+        return arr
+      }
+
+      function getIncomeSum(incomeList, startMonthNumber, endMonthNumber) {
+        let sum = 0
+        for (let month = startMonthNumber; month < endMonthNumber; month++) {
+          sum += incomeList[month - 1]
+        }
+        return sum
+      }
+
+      function getSumForEvenMonth(incomeList) {
+        let sum = 0
+        for (let i = 1; i < incomeList.length; i++) {
+          if (i % 2 != 0) sum += incomeList[i]
+        }
+        return sum
+      }
+
+		function getPaymentsForAnyMonth(incomeList, ... monthNumbers) {
+			let sum = 0 
+			for (let i = 0; i < monthNumbers.length; i++) {
+				sum += incomeList[monthNumbers[i] - 1]
+			}
+			return sum
+		}
+
+      let incomeList = inputArray(12)
+      let incomeSumForAYear = getIncomeSum(incomeList, 1, 12)
+      let incomeSumForAFirstHalfOfTheYear = getIncomeSum(incomeList, 1, 6)
+      let incomeSumForASecondHalfOfTheYear = getIncomeSum(incomeList, 7, 12)
+      let incomeSumForSummer = getIncomeSum(incomeList, 6, 9)
+      let incomeSumForSecondQuartal = getIncomeSum(incomeList, 4, 6)
+      let sumForEvenMonth = getSumForEvenMonth(incomeList)
+		let paymentsForAnyMonth = getPaymentsForAnyMonth(incomeList, 3,6,9,12)
+
+		document.write(`Сумарна кількість грошей за рік - ${incomeSumForAYear}<br>
+Сумарна кількість грошей за першу половину року - ${incomeSumForAFirstHalfOfTheYear}<br>
+Сумарна кількість грошей за другу половину року - ${incomeSumForASecondHalfOfTheYear}<br>
+Сумарна кількість грошей за літо - ${incomeSumForSummer}<br>
+Сумарна кількість грошей за II квартал - ${incomeSumForSecondQuartal}<br>
+Сумарна кількість грошей за парні місяці - ${sumForEvenMonth}<br>
+Сумарна кількість грошей за початкові місяці у сезоні - ${paymentsForAnyMonth}
+<br>`)
+    </script>
+  </body>
+</html>

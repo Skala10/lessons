@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Задача 8</h1>
+    <p>
+      Дано одновимірний масив, у якому зберігається певна виграшна сума
+      (елементи заповнюються випадковим чином значеннями від -500 до 500).
+      Надаючи користувачу можливість вибирати номери елементів (поки він не
+      відмовиться). Знаходити сумарний виграш.
+    </p>
+
+    <script>
+      function getRandomNum(maxN, minN) {
+        return minN + Math.round(Math.random() * (maxN - minN + 1))
+      }
+
+      const randomNum = getRandomNum(500, -500)
+
+      function getRandomNumList(number) {
+        let arr = []
+        for (let i = 0; i < number; i++) {
+          arr.push(randomNum)
+        }
+        return arr
+      }
+
+      function getFinishResult(listNumbers) {
+        let sum = 0
+        let usersNum
+        do {
+          usersNum = parseInt(prompt("Введіть номер елемента (1-10)"))
+          if (isFinite(usersNum)) sum += listNumbers[usersNum - 1]
+        } while (isFinite(usersNum))
+        return sum
+      }
+
+      const randomNumList = getRandomNumList(10)
+
+      const finishResult = getFinishResult(randomNumList)
+
+      let result
+
+      if (finishResult > 0) result = `Ви виграли ${finishResult}`
+      else result = `Ви програли ${finishResult}`
+
+      document.write(`${result}`)
+    </script>
+  </body>
+</html>

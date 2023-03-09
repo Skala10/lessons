@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Задача 5</h1>
+    <p>
+      Дано послідовність оцінок учня. Підрахувати кількість: 1) двійок 2)
+      кількість хороших оцінок (добре, відмінно); 3) кількість оцінок, які нижче
+      середнього.
+    </p>
+    <script>
+      const schoolarScores = [2, 3, 4, 2, 5, 3, 4, 4, 3, 2, 5]
+
+      function getScoresEqual2(scoreList) {
+        let result = 0
+        for (let i = 0; i < scoreList.length; i++) {
+          if (scoreList[i] === 2) result++
+        }
+        return result
+      }
+
+      function getScoresEqual34(scoreList) {
+        let result = 0
+        for (let i = 0; i < scoreList.length; i++) {
+          if (scoreList[i] >= 4) result++
+        }
+        return result
+      }
+
+      function getAvarageScore(scoreList) {
+        let sum = 0
+        for (let i = 0; i < scoreList.length; i++) {
+          sum += scoreList[i]
+        }
+        sum = sum / scoreList.length
+        return sum
+        console.log(sum)
+      }
+
+      function getScoresLessThenAvarage(scoreList, avarageScore) {
+        let result = 0
+        for (let i = 0; i < scoreList.length; i++) {
+          if (avarageScore > scoreList[i]) result++
+        }
+        return result
+        console.log(result)
+      }
+
+      const scoresEqual2 = getScoresEqual2(schoolarScores)
+      const scoresEqual34 = getScoresEqual34(schoolarScores)
+      const avarageScore = getAvarageScore(schoolarScores)
+      const scoresLessThenAvarage = getScoresLessThenAvarage(
+        schoolarScores,
+        avarageScore
+      )
+
+      document.write(`Кількість двійок:${scoresEqual2}<br> Кількість хороших оцінок (добре, відмінно):${scoresEqual34}<br> Кількість оцінок, які нижче
+      середнього.${scoresLessThenAvarage}`)
+    </script>
+  </body>
+</html>
