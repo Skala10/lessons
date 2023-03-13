@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Задача 6</h1>
+    <p>
+      Дано масив елементів. Усі елементи, які більші за перший елемент помножити
+      на 2
+    </p>
+    <script>
+      function getNumberWhatX2BiggerThenFirstItem(arr) {
+        arr.forEach((item, index, arr) => {
+          if (item > arr[0]) arr[index] *= 2
+        }) 
+		 return arr 
+      }
+
+      let arr = [16, 18, 5, 12, 20, 10, 17, 16, 9]
+
+      arr = getNumberWhatX2BiggerThenFirstItem(arr)
+      console.log(arr)
+		
+    </script>
+  </body>
+</html>

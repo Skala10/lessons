@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Задача 8</h1>
+    <p>
+      Дано масив номерів авто. Сформувати новий масив тих, які починаються на
+      «А»
+    </p>
+    <script>
+      function getCarNumberWhatStartsFrom_A(arr) {
+        return arr.filter((element) => element[0] === "A")
+      }
+      const arrOfCarsNumbers = ["A542", "F145", "B453", "A978", "N232", "a678"]
+      console.log(arrOfCarsNumbers)
+      let newArrOfCarsNumbers = getCarNumberWhatStartsFrom_A(arrOfCarsNumbers)
+      console.log(newArrOfCarsNumbers)
+    </script>
+  </body>
+</html>
